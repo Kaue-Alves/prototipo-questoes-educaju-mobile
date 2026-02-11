@@ -9,7 +9,7 @@ import {
     QuizScreen,
     ResultsScreen,
 } from "@/screens";
-import { API_CONFIG } from "@/constants/api";
+import { questionsService } from "@/services/questionsService";
 import { Colors } from "@/constants/theme";
 
 export default function App() {
@@ -27,51 +27,21 @@ export default function App() {
     const generateQuestions = useCallback(async () => {
         setIsGeneratingQuestions(true);
         try {
-            const url = `${API_CONFIG.baseUrl}${API_CONFIG.endpoints.generateQuestions}`;
-            console.log("[Mobile] Calling API:", url);
-
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    subject: subject,
-                    content: content,
-                    quantity: parseInt(questionCount),
-                }),
+            const data = await questionsService.generate({
+                subject,
+                content,
+                quantity: parseInt(questionCount),
             });
 
-            console.log("[Mobile] Response status:", response.status);
-
-            const contentType = response.headers.get("content-type");
-            if (!contentType || !contentType.includes("application/json")) {
-                const textResponse = await response.text();
-                console.error(
-                    "[Mobile] Expected JSON but got:",
-                    textResponse.substring(0, 200),
-                );
-                throw new Error(
-                    "O servidor não retornou JSON. Verifique se a URL da API está correta.",
-                );
-            }
-
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                console.error("[Mobile] Error response:", errorData);
-                throw new Error(
-                    errorData.message || `Erro HTTP: ${response.status}`,
-                );
-            }
-
-            const data = await response.json();
             console.log("[Mobile] Questions received:", data.length);
             setQuestions(data);
             setStage("quiz");
         } catch (error) {
             console.error("[Mobile] Erro ao gerar questões:", error);
             const errorMessage =
-                error instanceof Error ? error.message : "Erro desconhecido";
+                error.response?.data?.message ||
+                error.message ||
+                "Erro desconhecido";
             Alert.alert(
                 "Erro ao gerar questões",
                 `${errorMessage}\n\nVerifique:\n1. O backend está rodando?\n2. A URL da API está correta?\n3. A rota está acessível do dispositivo?`,
