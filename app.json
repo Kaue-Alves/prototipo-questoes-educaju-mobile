@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Educaju",
+    "slug": "educaju-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "scheme": "educaju",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#e95a0c"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.educaju.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#e95a0c"
+      },
+      "package": "com.educaju.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-asset"
+    ]
+  }
+}
