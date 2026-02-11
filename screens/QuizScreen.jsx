@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Card, Button, RadioGroup, DocumentIcon } from "@/components/ui";
-import { Colors, FontSizes, Spacing, BorderRadius } from "@/constants/theme";
 
 export function QuizScreen({
     subject,
@@ -78,9 +77,9 @@ export function QuizScreen({
 const styles = StyleSheet.create({
     scrollContent: {
         flexGrow: 1,
-        padding: Spacing.lg,
-        paddingTop: Spacing["2xl"],
-        paddingBottom: Spacing["4xl"],
+        padding: 16,
+        paddingTop: 24,
+        paddingBottom: 48,
     },
     card: {
         maxWidth: 700,
@@ -89,7 +88,7 @@ const styles = StyleSheet.create({
     },
     headerSection: {
         alignItems: "center",
-        marginBottom: Spacing["3xl"],
+        marginBottom: 32,
     },
     iconContainer: {
         width: 64,
@@ -98,38 +97,38 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(220, 40, 37, 0.1)",
         alignItems: "center",
         justifyContent: "center",
-        marginBottom: Spacing.lg,
+        marginBottom: 16,
     },
     title: {
-        fontSize: FontSizes["2xl"],
+        fontSize: 24,
         fontWeight: "700",
-        color: Colors.darkGray,
-        marginBottom: Spacing.sm,
+        color: "#111827",
+        marginBottom: 8,
         textAlign: "center",
     },
     subtitle: {
-        fontSize: FontSizes.base,
-        color: Colors.mutedForeground,
+        fontSize: 16,
+        color: "#6b7280",
         textAlign: "center",
     },
     questionsList: {
-        gap: Spacing["2xl"],
+        gap: 24,
     },
     questionCard: {
         backgroundColor: "rgba(255, 251, 247, 0.5)",
-        borderRadius: BorderRadius.lg,
+        borderRadius: 10,
         borderWidth: 1,
-        borderColor: Colors.border,
-        padding: Spacing.xl,
+        borderColor: "#e5e7eb",
+        padding: 20,
     },
     questionText: {
-        fontSize: FontSizes.base,
+        fontSize: 16,
         fontWeight: "600",
-        color: Colors.darkGray,
-        marginBottom: Spacing.lg,
+        color: "#111827",
+        marginBottom: 16,
         lineHeight: 24,
     },
     submitContainer: {
-        marginTop: Spacing["3xl"],
+        marginTop: 32,
     },
 });

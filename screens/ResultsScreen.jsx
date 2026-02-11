@@ -8,16 +8,15 @@ import {
     CheckIcon,
     XIcon,
 } from "@/components/ui";
-import { Colors, FontSizes, Spacing, BorderRadius } from "@/constants/theme";
 
 export function ResultsScreen({ results, questions, answers, onRestart }) {
     const percentage =
         questions.length > 0 ? (results.correct / questions.length) * 100 : 0;
 
     const getResultColor = () => {
-        if (percentage >= 70) return Colors.greenSuccess;
-        if (percentage >= 50) return Colors.orangePrimary;
-        return Colors.redPrimary;
+        if (percentage >= 70) return "#22c55e";
+        if (percentage >= 50) return "#e95a0c";
+        return "#dc2825";
     };
 
     const getResultMessage = () => {
@@ -123,10 +122,7 @@ export function ResultsScreen({ results, questions, answers, onRestart }) {
                                 {isCorrect ? (
                                     <CheckIcon size={24} color="#16a34a" />
                                 ) : (
-                                    <XIcon
-                                        size={24}
-                                        color={Colors.redPrimary}
-                                    />
+                                    <XIcon size={24} color="#dc2825" />
                                 )}
                             </View>
                             <View style={styles.questionHeaderText}>
@@ -140,7 +136,7 @@ export function ResultsScreen({ results, questions, answers, onRestart }) {
                                             {
                                                 color: isCorrect
                                                     ? "#16a34a"
-                                                    : Colors.redPrimary,
+                                                    : "#dc2825",
                                             },
                                         ]}
                                     >
@@ -164,7 +160,7 @@ export function ResultsScreen({ results, questions, answers, onRestart }) {
                                     {
                                         color: isCorrect
                                             ? "#16a34a"
-                                            : Colors.redPrimary,
+                                            : "#dc2825",
                                     },
                                 ]}
                             >
@@ -205,19 +201,19 @@ export function ResultsScreen({ results, questions, answers, onRestart }) {
 const styles = StyleSheet.create({
     scrollContent: {
         flexGrow: 1,
-        padding: Spacing.lg,
-        paddingTop: Spacing["2xl"],
-        paddingBottom: Spacing["4xl"],
+        padding: 16,
+        paddingTop: 24,
+        paddingBottom: 48,
     },
     mainCard: {
         maxWidth: 700,
         alignSelf: "center",
         width: "100%",
-        marginBottom: Spacing["3xl"],
+        marginBottom: 32,
     },
     headerSection: {
         alignItems: "center",
-        marginBottom: Spacing["3xl"],
+        marginBottom: 32,
     },
     iconContainer: {
         width: 80,
@@ -225,77 +221,77 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         alignItems: "center",
         justifyContent: "center",
-        marginBottom: Spacing["2xl"],
+        marginBottom: 24,
     },
     title: {
-        fontSize: FontSizes["3xl"],
+        fontSize: 30,
         fontWeight: "700",
-        color: Colors.darkGray,
-        marginBottom: Spacing.md,
+        color: "#111827",
+        marginBottom: 12,
         textAlign: "center",
     },
     subtitle: {
-        fontSize: FontSizes.lg,
-        color: Colors.mutedForeground,
+        fontSize: 18,
+        color: "#6b7280",
         textAlign: "center",
     },
     scoreGrid: {
         flexDirection: "row",
-        gap: Spacing.lg,
-        marginBottom: Spacing["3xl"],
+        gap: 16,
+        marginBottom: 32,
     },
     scoreCardSuccess: {
         flex: 1,
-        padding: Spacing["2xl"],
+        padding: 24,
         backgroundColor: "rgba(34, 197, 94, 0.05)",
-        borderRadius: BorderRadius.lg,
+        borderRadius: 10,
         borderWidth: 2,
         borderColor: "rgba(34, 197, 94, 0.3)",
         alignItems: "center",
     },
     scoreCardError: {
         flex: 1,
-        padding: Spacing["2xl"],
+        padding: 24,
         backgroundColor: "rgba(220, 40, 37, 0.05)",
-        borderRadius: BorderRadius.lg,
+        borderRadius: 10,
         borderWidth: 2,
         borderColor: "rgba(220, 40, 37, 0.3)",
         alignItems: "center",
     },
     scoreNumber: {
-        fontSize: FontSizes["5xl"],
+        fontSize: 48,
         fontWeight: "700",
         color: "#16a34a",
-        marginBottom: Spacing.sm,
+        marginBottom: 8,
     },
     scoreNumberError: {
-        fontSize: FontSizes["5xl"],
+        fontSize: 48,
         fontWeight: "700",
-        color: Colors.redPrimary,
-        marginBottom: Spacing.sm,
+        color: "#dc2825",
+        marginBottom: 8,
     },
     scoreLabel: {
-        fontSize: FontSizes.lg,
+        fontSize: 18,
         fontWeight: "500",
-        color: Colors.darkGray,
+        color: "#111827",
     },
     reviewTitle: {
-        fontSize: FontSizes["2xl"],
+        fontSize: 24,
         fontWeight: "700",
-        color: Colors.darkGray,
+        color: "#111827",
         textAlign: "center",
-        marginBottom: Spacing["2xl"],
+        marginBottom: 24,
     },
     reviewCard: {
         maxWidth: 700,
         alignSelf: "center",
         width: "100%",
-        marginBottom: Spacing.lg,
+        marginBottom: 16,
     },
     questionHeader: {
         flexDirection: "row",
-        gap: Spacing.lg,
-        marginBottom: Spacing.lg,
+        gap: 16,
+        marginBottom: 16,
     },
     statusIcon: {
         width: 40,
@@ -310,71 +306,71 @@ const styles = StyleSheet.create({
     questionMeta: {
         flexDirection: "row",
         alignItems: "center",
-        gap: Spacing.sm,
-        marginBottom: Spacing.sm,
+        gap: 8,
+        marginBottom: 8,
     },
     questionNumber: {
-        fontSize: FontSizes.sm,
+        fontSize: 14,
         fontWeight: "600",
-        color: Colors.mutedForeground,
+        color: "#6b7280",
     },
     questionStatus: {
-        fontSize: FontSizes.sm,
+        fontSize: 14,
         fontWeight: "700",
     },
     questionStatement: {
-        fontSize: FontSizes.lg,
+        fontSize: 18,
         fontWeight: "600",
-        color: Colors.darkGray,
+        color: "#111827",
         lineHeight: 26,
     },
     answerBox: {
-        backgroundColor: Colors.white,
-        borderRadius: BorderRadius.md,
+        backgroundColor: "#ffffff",
+        borderRadius: 8,
         borderWidth: 1,
-        borderColor: Colors.border,
-        padding: Spacing.lg,
-        marginBottom: Spacing.lg,
+        borderColor: "#e5e7eb",
+        padding: 16,
+        marginBottom: 16,
     },
     answerLabel: {
-        fontSize: FontSizes.sm,
+        fontSize: 14,
         fontWeight: "500",
-        color: Colors.mutedForeground,
-        marginBottom: Spacing.sm,
+        color: "#6b7280",
+        marginBottom: 8,
     },
     answerText: {
-        fontSize: FontSizes.base,
+        fontSize: 16,
         fontWeight: "500",
     },
     correctAnswerBox: {
         backgroundColor: "rgba(34, 197, 94, 0.05)",
-        borderRadius: BorderRadius.md,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: "rgba(34, 197, 94, 0.3)",
-        padding: Spacing.lg,
-        marginBottom: Spacing.lg,
+        padding: 16,
+        marginBottom: 16,
     },
     correctAnswerText: {
-        fontSize: FontSizes.base,
+        fontSize: 16,
         fontWeight: "500",
         color: "#16a34a",
     },
     explanationBox: {
         backgroundColor: "rgba(233, 90, 12, 0.05)",
-        borderRadius: BorderRadius.md,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: "rgba(233, 90, 12, 0.2)",
-        padding: Spacing.lg,
+        padding: 16,
     },
     explanationLabel: {
-        fontSize: FontSizes.sm,
+        fontSize: 14,
         fontWeight: "500",
-        color: Colors.orangePrimary,
-        marginBottom: Spacing.sm,
+        color: "#e95a0c",
+        marginBottom: 8,
     },
     explanationText: {
-        fontSize: FontSizes.base,
-        color: Colors.darkGray,
+        fontSize: 16,
+        color: "#111827",
         lineHeight: 24,
     },
 });

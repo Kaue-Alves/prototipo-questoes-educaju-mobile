@@ -10,7 +10,6 @@ import {
     ResultsScreen,
 } from "@/screens";
 import { questionsService } from "@/services/questionsService";
-import { Colors } from "@/constants/theme";
 
 export default function App() {
     const [stage, setStage] = useState("setup");
@@ -179,10 +178,7 @@ export default function App() {
 
     return (
         <SafeAreaProvider>
-            <StatusBar
-                barStyle="light-content"
-                backgroundColor={Colors.darkGray}
-            />
+            <StatusBar barStyle="light-content" backgroundColor="#111827" />
             <View style={styles.container}>
                 <Header />
                 <View style={styles.main}>{renderStage()}</View>
@@ -195,7 +191,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Colors.cream,
+        backgroundColor: "#fffbf7",
     },
     main: {
         flex: 1,

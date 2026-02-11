@@ -8,7 +8,6 @@ import {
     Platform,
 } from "react-native";
 import { Card, Input, Button, ClockIcon } from "@/components/ui";
-import { Colors, FontSizes, Spacing, BorderRadius } from "@/constants/theme";
 
 export function SetupScreen({
     subject,
@@ -109,9 +108,9 @@ const styles = StyleSheet.create({
     },
     scrollContent: {
         flexGrow: 1,
-        padding: Spacing.lg,
-        paddingTop: Spacing["3xl"],
-        paddingBottom: Spacing["4xl"],
+        padding: 16,
+        paddingTop: 32,
+        paddingBottom: 48,
     },
     card: {
         maxWidth: 500,
@@ -120,7 +119,7 @@ const styles = StyleSheet.create({
     },
     headerSection: {
         alignItems: "center",
-        marginBottom: Spacing["2xl"],
+        marginBottom: 24,
     },
     iconContainer: {
         width: 64,
@@ -129,20 +128,20 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(233, 90, 12, 0.1)",
         alignItems: "center",
         justifyContent: "center",
-        marginBottom: Spacing.lg,
+        marginBottom: 16,
     },
     title: {
-        fontSize: FontSizes["2xl"],
+        fontSize: 24,
         fontWeight: "700",
-        color: Colors.darkGray,
-        marginBottom: Spacing.sm,
+        color: "#111827",
+        marginBottom: 8,
     },
     subtitle: {
-        fontSize: FontSizes.sm,
-        color: Colors.mutedForeground,
+        fontSize: 14,
+        color: "#6b7280",
         textAlign: "center",
     },
     form: {
-        gap: Spacing.xs,
+        gap: 4,
     },
 });
