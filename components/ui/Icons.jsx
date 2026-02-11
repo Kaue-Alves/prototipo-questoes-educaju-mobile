@@ -1,14 +1,8 @@
-import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Path, SvgProps } from 'react-native-svg';
 import { Colors } from '@/constants/theme';
 
-interface IconProps {
-  size?: number;
-  color?: string;
-}
-
-export function ClockIcon({ size = 32, color = Colors.orangePrimary }: IconProps) {
+export function ClockIcon({ size = 32, color = Colors.orangePrimary }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2}>
       <Path
@@ -20,7 +14,7 @@ export function ClockIcon({ size = 32, color = Colors.orangePrimary }: IconProps
   );
 }
 
-export function BookIcon({ size = 40, color = Colors.orangePrimary }: IconProps) {
+export function BookIcon({ size = 40, color = Colors.orangePrimary }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2}>
       <Path
@@ -32,7 +26,7 @@ export function BookIcon({ size = 40, color = Colors.orangePrimary }: IconProps)
   );
 }
 
-export function DocumentIcon({ size = 32, color = Colors.redPrimary }: IconProps) {
+export function DocumentIcon({ size = 32, color = Colors.redPrimary }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2}>
       <Path
@@ -44,7 +38,7 @@ export function DocumentIcon({ size = 32, color = Colors.redPrimary }: IconProps
   );
 }
 
-export function CheckCircleIcon({ size = 40, color = '#16a34a' }: IconProps) {
+export function CheckCircleIcon({ size = 40, color = '#16a34a' }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2}>
       <Path
@@ -56,7 +50,7 @@ export function CheckCircleIcon({ size = 40, color = '#16a34a' }: IconProps) {
   );
 }
 
-export function InfoCircleIcon({ size = 40, color = Colors.orangePrimary }: IconProps) {
+export function InfoCircleIcon({ size = 40, color = Colors.orangePrimary }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2}>
       <Path
@@ -68,7 +62,7 @@ export function InfoCircleIcon({ size = 40, color = Colors.orangePrimary }: Icon
   );
 }
 
-export function CheckIcon({ size = 24, color = '#16a34a' }: IconProps) {
+export function CheckIcon({ size = 24, color = '#16a34a' }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2}>
       <Path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -76,7 +70,7 @@ export function CheckIcon({ size = 24, color = '#16a34a' }: IconProps) {
   );
 }
 
-export function XIcon({ size = 24, color = Colors.redPrimary }: IconProps) {
+export function XIcon({ size = 24, color = Colors.redPrimary }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2}>
       <Path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

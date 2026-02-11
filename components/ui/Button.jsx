@@ -10,17 +10,6 @@ import {
 } from 'react-native';
 import { Colors, BorderRadius, FontSizes, Spacing } from '@/constants/theme';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'destructive' | 'ghost';
-type ButtonSize = 'sm' | 'md' | 'lg';
-
-interface ButtonProps extends TouchableOpacityProps {
-  title: string;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  loading?: boolean;
-  fullWidth?: boolean;
-}
-
 export function Button({
   title,
   variant = 'primary',
@@ -30,25 +19,25 @@ export function Button({
   fullWidth = false,
   style,
   ...props
-}: ButtonProps) {
-  const buttonStyles: ViewStyle[] = [
+}) {
+  const buttonStyles = [
     styles.base,
     styles[`variant_${variant}`],
     styles[`size_${size}`],
     fullWidth && styles.fullWidth,
     disabled && styles.disabled,
-  ].filter(Boolean) as ViewStyle[];
+  ].filter(Boolean);
 
-  const textStyles: TextStyle[] = [
+  const textStyles = [
     styles.text,
     styles[`text_${variant}`],
     styles[`textSize_${size}`],
     disabled && styles.textDisabled,
-  ].filter(Boolean) as TextStyle[];
+  ].filter(Boolean);
 
   return (
     <TouchableOpacity
-      style={[...buttonStyles, style as ViewStyle]}
+      style={[...buttonStyles, style]}
       disabled={disabled || loading}
       activeOpacity={0.7}
       {...props}

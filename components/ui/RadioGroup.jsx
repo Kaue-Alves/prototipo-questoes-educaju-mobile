@@ -2,18 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Colors, BorderRadius, FontSizes, Spacing } from '@/constants/theme';
 
-interface RadioOption {
-  value: string;
-  label: string;
-}
-
-interface RadioGroupProps {
-  options: RadioOption[];
-  selectedValue?: string;
-  onValueChange: (value: string) => void;
-}
-
-export function RadioGroup({ options, selectedValue, onValueChange }: RadioGroupProps) {
+export function RadioGroup({ options, selectedValue, onValueChange }) {
   return (
     <View style={styles.container}>
       {options.map((option) => {

@@ -3,15 +3,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Card, Button, BookIcon } from '@/components/ui';
 import { Colors, FontSizes, Spacing, BorderRadius } from '@/constants/theme';
 
-interface StudyingScreenProps {
-  subject: string;
-  content: string;
-  timeLeft: number;
-  isGeneratingQuestions: boolean;
-  onSkipTimer: () => void;
-}
 
-function formatTime(seconds: number): string {
+function formatTime(seconds){
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
   return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
@@ -23,7 +16,7 @@ export function StudyingScreen({
   timeLeft,
   isGeneratingQuestions,
   onSkipTimer,
-}: StudyingScreenProps) {
+}) {
   return (
     <View style={styles.container}>
       <Card style={styles.card}>

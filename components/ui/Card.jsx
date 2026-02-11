@@ -2,13 +2,7 @@ import React from 'react';
 import { View, StyleSheet, ViewStyle, ViewProps } from 'react-native';
 import { Colors, BorderRadius, Spacing } from '@/constants/theme';
 
-interface CardProps extends ViewProps {
-  children: React.ReactNode;
-  variant?: 'default' | 'success' | 'error' | 'orange';
-  style?: ViewStyle;
-}
-
-export function Card({ children, variant = 'default', style, ...props }: CardProps) {
+export function Card({ children, variant = 'default', style, ...props }) {
   return (
     <View style={[styles.card, styles[`variant_${variant}`], style]} {...props}>
       {children}

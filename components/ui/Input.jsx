@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   TextInput,
   View,
@@ -8,13 +7,7 @@ import {
 } from 'react-native';
 import { Colors, BorderRadius, FontSizes, Spacing } from '@/constants/theme';
 
-interface InputProps extends TextInputProps {
-  label?: string;
-  hint?: string;
-  error?: string;
-}
-
-export function Input({ label, hint, error, style, ...props }: InputProps) {
+export function Input({ label, hint, error, style, ...props }) {
   return (
     <View style={styles.container}>
       {label && <Text style={styles.label}>{label}</Text>}
