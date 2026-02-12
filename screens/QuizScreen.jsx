@@ -19,7 +19,7 @@ export function QuizScreen({
             showsVerticalScrollIndicator={false}
         >
             <Card style={styles.card}>
-                {/* Header */}
+
                 <View style={styles.headerSection}>
                     <View style={styles.iconContainer}>
                         <DocumentIcon size={32} />
@@ -31,7 +31,6 @@ export function QuizScreen({
                     </Text>
                 </View>
 
-                {/* Questions */}
                 <View style={styles.questionsList}>
                     {questions.map((question, index) => (
                         <View key={question.id} style={styles.questionCard}>
@@ -54,7 +53,6 @@ export function QuizScreen({
                     ))}
                 </View>
 
-                {/* Submit Button */}
                 <View style={styles.submitContainer}>
                     <Button
                         title={
@@ -69,6 +67,7 @@ export function QuizScreen({
                         onPress={onSubmit}
                     />
                 </View>
+                
             </Card>
         </ScrollView>
     );

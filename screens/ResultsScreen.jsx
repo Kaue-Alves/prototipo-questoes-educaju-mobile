@@ -88,7 +88,6 @@ export function ResultsScreen({ results, questions, answers, onRestart }) {
                 />
             </Card>
 
-            {/* Detailed Review */}
             <Text style={styles.reviewTitle}>Revisão das Questões</Text>
 
             {questions.map((question, index) => {
@@ -107,7 +106,6 @@ export function ResultsScreen({ results, questions, answers, onRestart }) {
                         variant={isCorrect ? "success" : "error"}
                         style={styles.reviewCard}
                     >
-                        {/* Question Header */}
                         <View style={styles.questionHeader}>
                             <View
                                 style={[
@@ -149,7 +147,6 @@ export function ResultsScreen({ results, questions, answers, onRestart }) {
                             </View>
                         </View>
 
-                        {/* User's Answer */}
                         <View style={styles.answerBox}>
                             <Text style={styles.answerLabel}>
                                 Sua resposta:

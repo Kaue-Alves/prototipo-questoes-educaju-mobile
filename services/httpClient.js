@@ -1,7 +1,9 @@
 import axios from "axios";
+import Constants from "expo-constants";
 
 const BASE_URL =
-    process.env.EXPO_PUBLIC_API_BASE_URL || "http://localhost:3001";
+    Constants.expoConfig?.extra?.apiBaseUrl ||
+    "https://educaju-backend.onrender.com";
 
 const httpClient = axios.create({
     baseURL: BASE_URL,

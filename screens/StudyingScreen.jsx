@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Card, Button, BookIcon } from "@/components/ui";
 
 function formatTime(seconds) {
@@ -16,9 +16,12 @@ export function StudyingScreen({
     onSkipTimer,
 }) {
     return (
-        <View style={styles.container}>
+        <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            showsVerticalScrollIndicator={false}
+        >
             <Card style={styles.card}>
-                {/* Header */}
+
                 <View style={styles.headerSection}>
                     <View style={styles.iconContainer}>
                         <BookIcon size={40} />
@@ -35,7 +38,6 @@ export function StudyingScreen({
                     </View>
                 </View>
 
-                {/* Timer */}
                 <View style={styles.timerBox}>
                     {isGeneratingQuestions ? (
                         <Text style={styles.generatingText}>
@@ -53,7 +55,6 @@ export function StudyingScreen({
                     </Text>
                 </View>
 
-                {/* Skip Button */}
                 {!isGeneratingQuestions && (
                     <View style={styles.buttonContainer}>
                         <Button
@@ -63,15 +64,18 @@ export function StudyingScreen({
                         />
                     </View>
                 )}
+                
             </Card>
-        </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
+    scrollContent: {
+        flexGrow: 1,
         padding: 16,
+        paddingTop: 32,
+        paddingBottom: 48,
         justifyContent: "center",
     },
     card: {

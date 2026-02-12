@@ -51,8 +51,7 @@ export default function App() {
             setIsGeneratingQuestions(false);
         }
     }, [subject, content, questionCount]);
-
-    // Timer effect
+-
     useEffect(() => {
         if (stage === "studying" && timeLeft > 0) {
             const timer = setInterval(() => {

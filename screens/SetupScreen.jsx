@@ -41,7 +41,7 @@ export function SetupScreen({
                 keyboardShouldPersistTaps="handled"
             >
                 <Card style={styles.card}>
-                    {/* Header Icon & Title */}
+
                     <View style={styles.headerSection}>
                         <View style={styles.iconContainer}>
                             <ClockIcon size={32} />
@@ -53,8 +53,8 @@ export function SetupScreen({
                         </Text>
                     </View>
 
-                    {/* Form */}
                     <View style={styles.form}>
+
                         <Input
                             label="Matéria/Disciplina"
                             value={subject}
@@ -95,6 +95,7 @@ export function SetupScreen({
                             size="lg"
                             fullWidth
                         />
+
                     </View>
                 </Card>
             </ScrollView>
